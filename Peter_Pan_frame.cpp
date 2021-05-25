@@ -10,6 +10,8 @@ int main()
     char *words=new char[len];
     strcpy(words,word.c_str());
     int label=0;
+    int labe11=0;
+    int label2=0;
     //第一行
     for(int i=1;i<=len;i++)
     {
@@ -29,9 +31,15 @@ int main()
     //第二行
     for(int j=1;j<=2*len;j++)
     {
-        if(j%5==0||j%6==0)
+        labe11++;
+        if(labe11==5)
         {
-            cout<<".*";
+            for(int k=0;k<2;k++)
+            {
+                cout<<".*";
+            }
+            j++;
+            labe11=0;
         }else
         {
             cout<<".#";
@@ -44,7 +52,7 @@ int main()
     //第三行
     for(int l=1;l<=2*len;l++)
     {
-        if(l%5==0||l%7==0)
+        if((l-3)%2==0&&l>=4&&l%3!=0)
         {
             cout<<"*.";
         }else
@@ -53,7 +61,6 @@ int main()
             {
                 cout<<words[label]<<".";
                 label++;
-
             }else
             {
                 cout<<"#.";
@@ -67,15 +74,20 @@ int main()
         }else if(l==2*len)
         {
             cout<<"#"<<endl;
-
         }
     }
     //第二行
     for(int j=1;j<=2*len;j++)
     {
-        if(j%5==0||j%6==0)
+        label2++;
+        if(label2==5)
         {
-            cout<<".*";
+            for(int k=0;k<2;k++)
+            {
+                cout<<".*";
+            }
+            j++;
+            label2=0;
         }else
         {
             cout<<".#";
@@ -85,7 +97,7 @@ int main()
             cout<<"."<<endl;
         }
     }
-//第一行
+//第五行
     for(int i=1;i<=len;i++)
     {
         if(i%3==0)
