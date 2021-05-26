@@ -10,7 +10,6 @@ int main()
     //讲字符串转换为整型数组
     for(int i=0;i<len;i++)
     {
-        int x;
         stringstream ss;
         ss << number1.substr(i,1);
         ss >> x;
